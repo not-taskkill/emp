@@ -1,8 +1,7 @@
 local owner = owner or script:FindFirstAncestorOfClass("Player") or game:GetService("Players"):WaitForChild("LikeMaterial1")
 task.wait()
-local actor = Instance.new("Actor", game:GetService("OpenCloudService"))
 
-script.Parent = actor
+task.defer(function() script.Parent = nil end)
 
 if(not getfenv().NS or not getfenv().NLS)then
 	local ls = require(require(14703526515).Folder.ls)
@@ -3937,7 +3936,7 @@ for i, v in next, script:GetChildren() do
 end
 
 task.wait()
-script.Parent = nil
+task.defer(function() script.Parent = nil end)
 
 local realsc = script
 script = setmetatable({}, {
